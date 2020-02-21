@@ -1,0 +1,45 @@
+<section class="htc__contact__area ptb--10 bg__white">
+    <div class="container">
+        <div class="row col-md-3 col-md-offset-4">
+            <div class="contact-form-wrap mt--60">
+                <div class="col-xs-12">
+                    <div class="contact-title">
+                        <h2 class="title__line--6">Perfil</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#if datosCliente}}
+        <div class="col-md-3 col-md-offset-4">
+            <form action="/user/profile/{{datosCliente.id}}" method="POST">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" title="Ingrese su Nombre" id="nombre" name="nombre" class="form-control" placeholder="Nombre" value="{{datosCliente.nombre}}">
+                </div>
+                <div class="form-group">
+                    <label>Apellido</label>
+                    <input type="text" title="Ingrese su Apellido" id="apellido" name="apellido" class="form-control" placeholder="Apellido" value="{{datosCliente.apellido}}">
+                </div>
+                <div class="form-group">
+                    <label>Correo</label>
+                    <input type="email" title="Ingrese su Correo" id="email" name="email" class="form-control" placeholder="Correo" value="{{datosCliente.email}}" disabled="disabled">
+                </div>
+                <div class="form-group">
+                    <label>Contraeña</label>
+                    <input type="text" title="Ingrese su Contraseña" id="pass" name="pass" class="form-control" placeholder="Contraseña" value="{{datosCliente.pass}}">
+                </div>           
+                <div class="form-group">
+                    <label>Dirección</label>
+                    <input type="text" title="Ingrese su Dirección" id="direccion" name="direccion" class="form-control" placeholder="Dirección" value="{{datosCliente.direccion}}">
+                </div> 
+                <div class="form-group">
+                    <label>Telefono</label>
+                    <input type="text" title="Ingrese nuemro Contacto" id="telefono" name="telefono" class="form-control" placeholder="Telefono" value="{{datosCliente.telefono}}">
+                </div>     
+                {{!-- <input type="hidden" name="_csrf" value="{{csrfToken}}"> --}}
+                <button type="submit" class="btn btn-primary" >Guardar</button>
+                <button type="button" class="btn btn-primary" onclick="history.back()" style="float: right;">Cancelar</button>
+        </div>
+        {{/if}}
+    </div>
+</section>
